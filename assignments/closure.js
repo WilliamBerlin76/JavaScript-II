@@ -17,7 +17,12 @@ console.log(addGlobal(18));
 const counterMaker = () => {
   // IMPLEMENTATION OF counterMaker:
   // 1- Declare a `count` variable with a value of 0. We will be mutating it, so declare it using `let`!
+  let count = 0
   // 2- Declare a function `counter`. It should increment and return `count`.
+  let counter = function(){
+    return count++
+  };
+  return counter;
   //      NOTE: This `counter` function, being nested inside `counterMaker`,
   //      "closes over" the `count` variable. It can "see" it in the parent scope!
   // 3- Return the `counter` function.
