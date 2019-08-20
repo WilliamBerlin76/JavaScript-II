@@ -91,7 +91,24 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
-
+//runners who donated over 150
+let largeDonations = [];
+runners.filter(function(items){
+  if (items.donation > 150) {largeDonations.push(items)}
+});
+console.log(largeDonations)
 // Problem 2
+// small people
+let smallPeople = [];
+runners.filter(function(items){
+  if (items.shirt_size === "S" || items.shirt_size === "XS") {smallPeople.push(items)}
+});
+console.log(smallPeople);
 
 // Problem 3
+//last names to lowercase
+lastNameLowerCase = [];
+runners.map(function(items){
+  return lastNameLowerCase.push(items.last_name.toLowerCase())
+});
+console.log(lastNameLowerCase);
