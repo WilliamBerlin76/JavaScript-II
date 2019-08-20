@@ -41,25 +41,47 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
+  return cb(arr.length);
 }
+const testLength = getLength(items, length => `this array is ${length} items long`);
+console.log(testLength);
+
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
-}
+  return cb(arr[3]);
+};
+const testLast = last(items, lastItem => `${lastItem} is the last item`)
+console.log(testLast);
+
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
-}
+  return cb(x + y);
+};
+const testAdd = sumNums(3, 4, add => `3 + 4 = ${add}`);
+console.log(testAdd);
+
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
-}
+  return cb(x * y);
+};
+const testMultiply = multiplyNums(5, 6, multiply => `5 * 6 = ${multiply}`);
+console.log(testMultiply);
+
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+   if (list.includes(item)) {
+    return cb(true)
+  } else {
+    return cb(false)
+  }
 }
-
+const testContains = contains("Pencil", items, trueFalse => trueFalse )
+console.log(testContains);
 /* STRETCH PROBLEM */
 
 function removeDuplicates(array, cb) {
