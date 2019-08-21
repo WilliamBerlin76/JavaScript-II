@@ -94,7 +94,7 @@ console.log(ticketPriceTotal);
 //runners who donated over 150
 let largeDonations = [];
 runners.filter(function(items){
-  if (items.donation > 150) {largeDonations.push(items)}
+  if (items.donation > 149) {largeDonations.push(items)}
 });
 console.log(largeDonations)
 // Problem 2
