@@ -20,7 +20,9 @@ const counterMaker = () => {
   let count = 0
   // 2- Declare a function `counter`. It should increment and return `count`.
   let counter = function(){
-    return count++
+    count = count + 1;
+    if (count === 6) {count = 1};
+    return count;
   };
   return counter;
   //      NOTE: This `counter` function, being nested inside `counterMaker`,
@@ -30,7 +32,18 @@ const counterMaker = () => {
 // Example usage: const myCounter = counterMaker();
 // myCounter(); // 1
 // myCounter(); // 2
-
+const myCounter = counterMaker();
+console.log(myCounter());
+console.log(myCounter());
+console.log(myCounter());
+console.log(myCounter());
+console.log(myCounter());
+console.log(myCounter());
+console.log(myCounter());
+console.log(myCounter());
+console.log(myCounter());
+console.log(myCounter());
+console.log(myCounter());
 // ==== Challenge 3: Make `counterMaker` more sophisticated ====
 // It should have a `limit` parameter. Any counters we make with `counterMaker`
 // will refuse to go over the limit, and start back at 1.
